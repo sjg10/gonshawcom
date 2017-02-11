@@ -1,4 +1,5 @@
 {% load static %}
+{{ content|safe }}
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -106,16 +107,17 @@
 								</p>
 								<section class="is-gallery" id="math-gallery">
 									<div class="row half">
-										<div class="4u">
-                                            <a class="projectC" id="m2C" rel="math" href="#m2"><img src={% static 'math/images/2.jpg' %} alt=""></a>
-										</div>
-										<div class="4u">
-                                            <a class="projectC" id="m1C" rel="math" href="#m1"><img src={% static 'math/images/1.jpg' %} alt=""></a>
-										</div>
+                                        {% if math_posts %}
+                                            {% for post in math_posts %}
+										        <div class="4u">
+                                                    <a class="projectC" id="m{{ post.id }}C" rel="math" href="#m{{post.id}}"><img src={% static 'math/images/2.jpg' %} alt=""></a>
+			        							</div>
+                                            {% endfor %}
+                                        {% else %}
+                                            <p>No polls are available.</p>
+                                        {% endif %}
 									</div>
 								</section>
-                                                                <div class="math" id="m2" style="display:none"></div>
-                                                                <div class="math" id="m1" style="display:none"></div>
 							</article>
 
 						
@@ -178,7 +180,7 @@
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="links">
-							<li>Sam Gonshaw &copy; 2015</li><br>
+							<li>Sam Gonshaw &copy; 2017</li><br>
 							<a href="mailto:sam@gonshaw.com" class="fa fa-envelope"><span></span></a>
 							<li><a href="http://uk.linkedin.com/in/samgonshaw/" class="fa fa-linkedin"></a></li>
                             <li><a href={% static 'atom/index.html' %} class="fa fa-rss"></a></li>
@@ -187,6 +189,11 @@
 					</div>
 				</div>
 			
+{% if math_posts %}
+    {% for post in math_posts %}
+        <div style="display:none"><div id="m{{post.id}}"><header><h2>{{post.post_title}}</h2></header>{% autoescape off %}{{post.post_text}}{% endautoescape %}</div></div>
+{% endfor %}
+{% endif %}
 			
 	<script type="text/javascript">
 		$(document).ready(function() {
