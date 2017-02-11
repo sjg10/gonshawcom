@@ -114,7 +114,7 @@
 			        							</div>
                                             {% endfor %}
                                         {% else %}
-                                            <p>No polls are available.</p>
+                                            <p>No math posts are available.</p>
                                         {% endif %}
 									</div>
 								</section>
@@ -132,24 +132,17 @@
 								</p>
 								<section class="is-gallery">
 									<div class="row half">
-										<div class="4u">
-                                            <a class="projectC" id="s4C" rel="software" href="#s4"><img src={% static 'software/images/4.jpg' %} alt=""></a>
-										</div>
-										<div class="4u">
-                                            <a class="projectC" id="s3C" rel="software" href="#s3"><img src={% static 'software/images/3.jpg' %} alt=""></a>
-										</div>
-										<div class="4u">
-                                            <a class="projectC" id="s2C" rel="software" href="#s2"><img src={% static 'software/images/2.jpg' %} alt=""></a>
-										</div>
-										<div class="4u">
-                                            <a class="projectC" id="s1C" rel="software" href="#s1"><img src={% static 'software/images/1.jpg' %} alt=""></a>
-										</div>
+                                        {% if software_posts %}
+                                            {% for post in software_posts %}
+										        <div class="4u">
+                                                    <a class="projectC" id="s{{ post.id }}C" rel="software" href="#s{{post.id}}"><img src={{post.post_image.url}} alt=""></a>
+			        							</div>
+                                            {% endfor %}
+                                        {% else %}
+                                            <p>No software content available.</p>
+                                        {% endif %}
 									</div>
 								</section>
-								<div class="software" id="s4" style="display:none"></div>
-								<div class="software" id="s3" style="display:none"></div>
-								<div class="software" id="s2" style="display:none"></div>
-								<div class="software" id="s1" style="display:none"></div>
 							</article>
 
 						<!-- Links -->
@@ -194,6 +187,11 @@
         <div style="display:none"><div id="m{{post.id}}"><header><h2>{{post.post_title}}</h2></header>{% autoescape off %}{{post.post_text}}{% endautoescape %}</div></div>
 {% endfor %}
 {% endif %}
+{% if software_posts %}
+    {% for post in software_posts %}
+        <div style="display:none"><div id="s{{post.id}}"><header><h2>{{post.post_title}}</h2></header>{% autoescape off %}{{post.post_text}}{% endautoescape %}</div></div>
+{% endfor %}
+{% endif %}
 			
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -213,14 +211,6 @@
 				'loop' : false,
 				'arrows' : true,
 			});
-
-		/*	 $( ".software" ).each(function() {
-                 $(this).load("software/"+$(this).attr('id')+".html");
-			});
-                         $( ".math" ).each(function() {
-                                $(this).load("math/".concat($(this).attr('id')).concat(".html"));
-                        });
-                        */
 		 });
 	</script> 
 	</body>
