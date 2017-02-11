@@ -110,7 +110,7 @@
                                         {% if math_posts %}
                                             {% for post in math_posts %}
 										        <div class="4u">
-                                                    <a class="projectC" id="m{{ post.id }}C" rel="math" href="#m{{post.id}}"><img src={% static 'math/images/2.jpg' %} alt=""></a>
+                                                    <a class="projectC" id="m{{ post.id }}C" rel="math" href="#m{{post.id}}"><img src={{post.post_image.url}} alt=""></a>
 			        							</div>
                                             {% endfor %}
                                         {% else %}
