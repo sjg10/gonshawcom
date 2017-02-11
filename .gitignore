@@ -1,0 +1,3 @@
+*.pyc
+gonshawcom/settings_private.py
+db.sqlite3
