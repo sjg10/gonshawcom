@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -7,13 +8,13 @@
 		<meta name="keywords" content="maths, mathematics, software, fano, sam gonshaw" />
 		<link rel="shortcut icon"  href="favicon.ico">
 		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet" />
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/detectmobilebrowsers.js"></script>
-		<script src="js/init.js"></script>
+        <script src={% static 'js/jquery.min.js' %}></script>
+        <script src={% static 'js/skel.min.js' %}></script>
+        <script src={% static 'js/detectmobilebrowsers.js' %}></script>
+        <script src={% static 'js/init.js' %}></script>
 		
-		<link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-		<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+        <link rel="stylesheet" href={% static 'css/jquery.fancybox.css' '?v=2.1.5'%} type="text/css" media="screen" />
+        <script type="text/javascript" src={% static 'js/fancybox/jquery.fancybox.pack.js' '?v=2.1.5'%}></script>
 
 		<script type="text/javascript">
 			  var _gaq = _gaq || [];
@@ -28,12 +29,12 @@
 		</script>
 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 		<noscript>
-			<link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-desktop.css" />
-			<link rel="stylesheet" href="css/noscript.css" />
+            <link rel="stylesheet" href={% static 'css/skel-noscript.css' %} />
+            <link rel="stylesheet" href={% static 'css/style.css' %} />
+            <link rel="stylesheet" href={% static 'css/style-desktop.css' %} />
+            <link rel="stylesheet" href={% static 'css/noscript.css' %} />
 		</noscript>
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+        <!--[if lte IE 8]><script src={% static 'js/html5shiv.js' %}></script><link rel="stylesheet" href={% static 'css/ie8.css' %} /><![endif]-->
 		
 	</head>
 	<body class="homepage">
@@ -52,7 +53,6 @@
 					</nav>
 
 				<!-- Main -->
-				
 					<div id="main">
 						<!-- Me -->
 							<article id="me" class="panel">
@@ -62,7 +62,7 @@
 								</header>
 								<a href="#about" class="jumplink pic">
 									<span class="jumplink arrow fa fa-chevron-right"><span>See my work</span></span>
-									<img src="images/escher_style_birds.jpg" alt="" />
+                                    <img src={% static 'images/escher_style_birds.jpg' %} alt="" />
 								</a>
 							</article>
 							
@@ -84,10 +84,10 @@
 									to the most intractible of problems.
 								</p>
 								<div id="desktopCV ">
-								<div class="fancybox" id="cv" rel="group" data-fancybox-type="iframe" href="cv.pdf"><div class="cvButton">Curriculum Vitae</div></div>
+                                    <div class="fancybox" id="cv" rel="group" data-fancybox-type="iframe" href={% static 'cv.pdf' %}><div class="cvButton">Curriculum Vitae</div></div>
 								</div>
 								<div id="mobileCV">
-								<a class="cvButton" href="cv.pdf">Curriculum Vitae</a><br><br><br>
+                                    <a class="cvButton" href={% static 'cv.pdf'}>Curriculum Vitae</a><br><br><br>
 								</div>
 							</article>
 
@@ -106,10 +106,10 @@
 								<section class="is-gallery" id="math-gallery">
 									<div class="row half">
 										<div class="4u">
-											<a class="projectC" id="m2C" rel="math" href="#m2"><img src="math/images/2.jpg" alt=""></a>
+                                            <a class="projectC" id="m2C" rel="math" href="#m2"><img src={% static 'math/images/2.jpg' %} alt=""></a>
 										</div>
 										<div class="4u">
-											<a class="projectC" id="m1C" rel="math" href="#m1"><img src="math/images/1.jpg" alt=""></a>
+                                            <a class="projectC" id="m1C" rel="math" href="#m1"><img src={% static 'math/images/1.jpg' %} alt=""></a>
 										</div>
 									</div>
 								</section>
@@ -130,16 +130,16 @@
 								<section class="is-gallery">
 									<div class="row half">
 										<div class="4u">
-											<a class="projectC" id="s4C" rel="software" href="#s4"><img src="software/images/4.jpg" alt=""></a>
+                                            <a class="projectC" id="s4C" rel="software" href="#s4"><img src={% static 'software/images/4.jpg' %} alt=""></a>
 										</div>
 										<div class="4u">
-											<a class="projectC" id="s3C" rel="software" href="#s3"><img src="software/images/3.jpg" alt=""></a>
+                                            <a class="projectC" id="s3C" rel="software" href="#s3"><img src={% static 'software/images/3.jpg' %} alt=""></a>
 										</div>
 										<div class="4u">
-											<a class="projectC" id="s2C" rel="software" href="#s2"><img src="software/images/2.jpg" alt=""></a>
+                                            <a class="projectC" id="s2C" rel="software" href="#s2"><img src={% static 'software/images/2.jpg' %} alt=""></a>
 										</div>
 										<div class="4u">
-											<a class="projectC" id="s1C" rel="software" href="#s1"><img src="software/images/1.jpg" alt=""></a>
+                                            <a class="projectC" id="s1C" rel="software" href="#s1"><img src={% static 'software/images/1.jpg' %} alt=""></a>
 										</div>
 									</div>
 								</section>
@@ -180,7 +180,7 @@
 							<li>Sam Gonshaw &copy; 2015</li><br>
 							<a href="mailto:sam@gonshaw.com" class="fa fa-envelope"><span></span></a>
 							<li><a href="http://uk.linkedin.com/in/samgonshaw/" class="fa fa-linkedin"></a></li>
-							<li><a href="atom/index.html" class="fa fa-rss"></a></li>
+                            <li><a href={% static 'atom/index.html' %} class="fa fa-rss"></a></li>
 							<li><a href="http://github.com/sjg10" class="fa fa-github"></a></li>
 						</ul>
 					</div>
@@ -206,12 +206,13 @@
 				'arrows' : true,
 			});
 
-			 $( ".software" ).each(function() {
-				$(this).load("software/"+$(this).attr('id')+".html");
+		/*	 $( ".software" ).each(function() {
+                 $(this).load("software/"+$(this).attr('id')+".html");
 			});
                          $( ".math" ).each(function() {
                                 $(this).load("math/".concat($(this).attr('id')).concat(".html"));
                         });
+                        */
 		 });
 	</script> 
 	</body>
