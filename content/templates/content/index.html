@@ -152,20 +152,13 @@
 								</header>
 								<p>
 								<ul class=linksInLine>
-									<li><a href="http://technologyreview.com">MIT Technology Review:</a>
-									The source of the latest developments in technology.</li><br>
-									<li><a href="http://coates.ma.ic.ac.uk/fanosearch/">Fano Search:</a>
-									An ongoing project to classify an important family of geometric entities
-									known as Fano varieties.</li><br>
-									<li><a href="http://www.sagemath.org">SAGE Project:</a>
-									A suite of open source, Cython base tools for abstract mathematics.</li>
-									<li><a href=http://www.gap-system.org/>GAP Computational Discrete Algebra:</a>
-									 A suite of tools for computing with mathematical groups.</li></a></li><br>
-									<li><a href="http://www.kefkefkef.com/">KefKefKef:</a>
-									An excellent collection of games and activities for use in education.</li><br>
-									<li><a href="http://html5up.net/">HTML5Up:</a>
-                                                                      	Providers of webtemplates for the css/js challenged. Kindly provided the template for
-									this site under a Creative Commons license.</li><br>
+
+								{% if links %}
+								    {% for link in links %}
+									<li><a href="{{link.url}}">{{link.title}}:</a>
+									{{link.description}}</li><br>
+								    {% endfor %}
+								{% endif %}
 								</ul>
 							</article>
 					</div>

@@ -15,3 +15,10 @@ class Post(models.Model):
             default =settings.UPLOADS_URL[1:] + 'pics/no-img.jpg')
     def __str__(self):
         return self.post_title
+
+class Link(models.Model):
+    title = models.CharField(max_length=200)
+    url = models.CharField(max_length=200)
+    description = models.TextField()
+    def __str__(self):
+        return self.title
