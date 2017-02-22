@@ -15,16 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from settings import STATIC_URL, STATIC_ROOT, UPLOADS_URL, UPLOADS_ROOT
-from django.conf.urls.static import static
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index', include('content.urls')),
     url(r'^\Z', include('content.urls')),
     url(r'^content/', include('content.urls')),
-]  + static(STATIC_URL, document_root=STATIC_ROOT) + static(UPLOADS_URL, document_root=UPLOADS_ROOT)
-
-
-urlpatterns += staticfiles_urlpatterns()
+    url(r'^favicon.ico$',RedirectView.as_view(
+        url=staticfiles_storage.url('favicon.ico'),permanent=False),
+        name="favicon"),
+] 
